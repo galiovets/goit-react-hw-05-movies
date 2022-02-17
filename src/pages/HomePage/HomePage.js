@@ -12,10 +12,10 @@ function HomePage() {
   }, []);
 
   return (
-    <Container>
+    <>
       <Title>Trending Today</Title>
       <MovieList movies={movies} />
-    </Container>
+    </>
   );
 }
 

@@ -1,12 +1,20 @@
 import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
+
+import { List, Item, ItemLink } from './MovieList.styled';
 
 function MovieList({ movies }) {
+  const { movieId } = useParams();
   return (
-    <ul>
+    <List>
       {movies.map(({ id, title }) => {
-        return <li key={id}>{title}</li>;
+        return (
+          <Item key={id}>
+            <ItemLink to={`/movies/${id}`}>{title}</ItemLink>
+          </Item>
+        );
       })}
-    </ul>
+    </List>
   );
 }
 

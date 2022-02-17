@@ -5,6 +5,7 @@ import Container from './components/Container';
 import Navigation from './components/Navigation';
 import HomePage from './pages/HomePage';
 import SearchMoviePage from './pages/SearchMoviePage';
+import MovieDetailsPage from './pages/MovieDetailsPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/movies" element={<SearchMoviePage />} />
+        <Route path="/movies/:movieId" element={<MovieDetailsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Container>
