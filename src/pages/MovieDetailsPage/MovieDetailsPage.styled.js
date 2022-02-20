@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const Wrapper = styled.div`
   padding: 15px 5px;
@@ -28,6 +29,7 @@ export const MovieTitle = styled.h2`
   font-weight: 500;
   font-size: 25px;
   margin-bottom: 15px;
+  padding-bottom: 3px;
   color: green;
   text-decoration: underline;
 `;
@@ -42,12 +44,25 @@ export const TextHeading = styled.h3`
   margin-bottom: 5px;
 `;
 
-export const GenresList = styled.ul`
+export const MovieDetailsList = styled.ul`
   display: flex;
+  margin-bottom: 15px;
 `;
 
-export const GenresItem = styled.li`
+export const MovieDetailsItem = styled.li`
   &:not(:last-child) {
-    margin-right: 10px;
+    margin-right: 15px;
+  }
+`;
+
+export const MovieDetailsLink = styled(NavLink)`
+  padding-bottom: 2px;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none;
+  color: green;
+
+  &.active {
+    border-bottom: 1px solid green;
   }
 `;
