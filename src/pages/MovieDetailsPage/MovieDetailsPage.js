@@ -1,4 +1,4 @@
-import { useParams, Outlet } from 'react-router-dom';
+import { useParams, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMovieDetails } from '../../services/API';
 import {
@@ -17,8 +17,14 @@ import {
 import noImage from '../../images/noImage.jpg';
 
 function MovieDetailsPage() {
-  const { movieId } = useParams();
   const [movie, setMovie] = useState({});
+  const { movieId } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const goBack = () => {
+    navigate(location?.state?.from ?? '/');
+  };
 
   useEffect(() => {
     getMovieDetails(movieId).then(movie => {
@@ -31,7 +37,9 @@ function MovieDetailsPage() {
   return (
     <>
       <Wrapper>
-        <Button type="button">go back</Button>
+        <Button type="button" onClick={goBack}>
+          Go back
+        </Button>
         <MovieWrapper>
           {poster_path ? (
             <MoviePoster src={`https://image.tmdb.org/t/p/w300${poster_path}`} alt="Movie Poster" />

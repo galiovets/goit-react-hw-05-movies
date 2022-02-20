@@ -6,7 +6,19 @@ export const Wrapper = styled.div`
 `;
 
 export const Button = styled.button`
+  font-size: 15px;
+  text-align: center;
+  min-width: 70px;
+  padding: 5px 10px;
+  background-color: #fff;
+  border: 1px solid green;
+  border-radius: 15px;
   margin-bottom: 15px;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    box-shadow: 4px 4px 5px 0px rgba(34, 60, 80, 0.08);
+  }
 `;
 
 export const MovieWrapper = styled.div`

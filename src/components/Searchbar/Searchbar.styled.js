@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
+  text-align: center;
   margin-bottom: 20px;
   padding: 15px 5px;
   background-color: transparent;
