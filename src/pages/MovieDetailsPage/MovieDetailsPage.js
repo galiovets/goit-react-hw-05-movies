@@ -65,10 +65,20 @@ function MovieDetailsPage() {
             <TextHeading>Additional Information</TextHeading>
             <MovieDetailsList>
               <MovieDetailsItem>
-                <MovieDetailsLink to={`/movies/${movieId}/cast`}>Cast</MovieDetailsLink>
+                <MovieDetailsLink
+                  to={`/movies/${movieId}/cast`}
+                  state={{ from: location?.state?.from ?? '/' }}
+                >
+                  Cast
+                </MovieDetailsLink>
               </MovieDetailsItem>
               <MovieDetailsItem>
-                <MovieDetailsLink to={`/movies/${movieId}/reviews`}>Reviews</MovieDetailsLink>
+                <MovieDetailsLink
+                  to={`/movies/${movieId}/reviews`}
+                  state={{ from: location?.state?.from ?? '/' }}
+                >
+                  Reviews
+                </MovieDetailsLink>
               </MovieDetailsItem>
             </MovieDetailsList>
           </MovieCard>
