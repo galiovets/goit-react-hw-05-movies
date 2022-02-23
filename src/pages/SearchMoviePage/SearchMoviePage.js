@@ -19,12 +19,12 @@ function SearchMoviePage() {
   };
 
   useEffect(() => {
-    if (search === '') {
+    if (currentQuery === null) {
       return;
     }
     setMovies([]);
 
-    searchMovie(search).then(movies => {
+    searchMovie(currentQuery).then(movies => {
       if (movies.results.length === 0) {
         toast.error('Sorry, nothing was found', {
           duration: 3000,
@@ -39,7 +39,7 @@ function SearchMoviePage() {
       }
       setMovies(movies.results);
     });
-  }, [search, currentQuery]);
+  }, [currentQuery]);
 
   return (
     <>
